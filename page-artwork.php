@@ -11,7 +11,7 @@
     <section class="row bodyMainPortfolio">
       <div class="small-12 columns"><h1>Paintings & Crafts</h1></div>
       <div class="small-12 columns">
-        <a href="http://www.tattoogil.com" class="button small">Back to Main Page</a>
+        <a href="http://www.tattoogil.com" class="button btn-outline small">Back to Main Page</a>
       </div>
     </section>
 

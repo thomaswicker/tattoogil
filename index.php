@@ -9,7 +9,7 @@
 				<div class="row homePageBody">
 					<h1 class="small-11 medium-11 large-6 columns">About Gil Ledesma</h1>
 					<section class="medium-12 large-4 columns">
-						<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button small dropdown">View Galleries</button><br>
+						<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button btn-outline small dropdown">View Galleries</button><br>
 						<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
 						  <li><a href="tattoos">Tattoos</a></li>
 						  <li><a href="bigwork">Big Work</a></li>
@@ -30,7 +30,7 @@
 		</section><!--/.bodyMain -->
 
 		<section class="portfolioLinksMain">
-			
+
 			<h1 class="small-12 large-12 columns">Check out my work in the</h1>
 			<h2 class="small-12 large-12 columns">TATTOO GALLERIES</h2>
 
@@ -43,24 +43,15 @@
 			  <li><a href="artwork"><img data-other-src="<?php bloginfo( 'template_directory' ); ?>/img/portfolioLink_paintings.jpg" src="<?php bloginfo( 'template_directory' ); ?>/img/portfolioLink_paintings_bw.jpg" alt="Artwork"></a></li>
 			</ul>
 
-			<?php
-   $files = glob("./wp-content/themes/tattoogil/img/tattoos/*.png");
-    $fileCount = count($files);
-
-    for ($i = ($fileCount-1); $i >= 0; $i--) {  
-        echo '<img src="'.$files[$i].'" alt="" width="450px">';
-    }       
-  ?>
-
 		</section><!--/.portfolioLinksMain -->
 
 		<section class="row contactMe">
-			
+
 			<h1 class="small-12 large-12 columns">Currently tattooing at:</h1>
 			<h2 class="small-12 large-12 columns">HAVANA STREET TATTOO</h2>
 			<p class="small-12 large-12 columns">2712 South Havana Street </br> Aurora, Colorado</p>
 			<a href="tel:+3033695025" class="small-12 large-12 columns">(303) 369.5025</a>
-			
+
 		</section><!--/.contactMe -->
 		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3071.218683428817!2d-104.86604439999999!3d39.667295100000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c87f374eb90e1%3A0x6b88bb02fbe7e3c2!2s2712+S+Havana+St%2C+Aurora%2C+CO+80014!5e0!3m2!1sen!2sus!4v1409510827381" width="100%" height="300" frameborder="0"></iframe>
 

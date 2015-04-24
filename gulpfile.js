@@ -1,58 +1,44 @@
-//requires
+//gulp requires
 var gulp = require('gulp'),
-    gutil = require('gulp-util'),
-    browserify = require('gulp-browserify'),
-    compass = require('gulp-compass'),
-    connect = require('gulp-connect'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat');
-    ftp = require('gulp-ftp');
+sass = require('gulp-ruby-sass'),
+autoprefixer = require('gulp-autoprefixer'),
+minifycss = require('gulp-minify-css'),
+uglify = require('gulp-uglify'),
+concat = require('gulp-concat'),
+rename = require("gulp-rename"),
+livereload = require('gulp-livereload');
 
-//sources
+//source variables
 var jsSources = ['components/js/*.js'];
 var sassSources = ['components/sass/styles.scss'];
-var htmlSources = ['/*.html'];
-//var jsonSources = ['js/*.json'];
 
-//gulp task definitions
+
+//gulp javascript tasks
 gulp.task('js', function() {
-  gulp.src(jsSources)
+    return gulp.src(jsSources)
     .pipe(concat('script.js'))
-    //.pipe(browserify())
-    .pipe(uglify())
     .pipe(gulp.dest('js'))
-    .pipe(connect.reload())
+    .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('js'))
 });
 
+//gulp sass tasks
 gulp.task('sass', function() {
-  gulp.src(sassSources)
-    .pipe(compass({
-      sass: 'components/sass',
-      image: 'img',
-      style: 'compressed'
-    })
-    .on('error', gutil.log))
+    return gulp.src(sassSources)
+    .pipe(sass({ style: 'expanded' }))
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
     .pipe(gulp.dest('css'))
-    .pipe(connect.reload())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss())
+    .pipe(gulp.dest('css'));
 });
 
+//gulp watch tasks
 gulp.task('watch', function() {
   gulp.watch(jsSources, ['js']);
   gulp.watch('components/sass/*.scss', ['sass']);
-  gulp.watch(htmlSources, ['html']);
-  //gulp.watch(jsonSources, ['json']);
-  gulp.watch('img/**/*.*', ['crushimg']);
-
 });
-
-// gulp.task('ftp', function () {
-//     return gulp.src('src/*')
-//         .pipe(ftp({
-//             host: 'ftp.thomaswicker.com',
-//             user: 'thomaswicker',
-//             pass: 'Dzyn3120605!'
-//         }));
-// });
 
 
 //runs all tasks through one command of 'gulp'
