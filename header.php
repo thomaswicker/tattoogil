@@ -5,10 +5,10 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="user-scalable=no; width=device-width; initial-scale=1; maximum-scale=1">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="keywords" content="Thomas Wicker Portfolio, XIRI Media, UI/UX, Design Denver, Denver websites, websites in denver, creative, design, creative design studio, ui, ux, user interface, user experience, graphic design, website design, web designer, printing services, logo, Denver photography">
 
-  <meta name="author" CONTENT="Thomas Wicker: Copyright - 2005-2013, All Rights Reserved"/>
+  <meta name="author" CONTENT="Thomas Wicker: Copyright - 2018, All Rights Reserved"/>
 
   <meta charset="<?php bloginfo('charset'); ?>" />
 
@@ -33,7 +33,7 @@
      ?>
   </title>
 
-  <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"> 
+  <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
   <?php if ( is_singular() ) wp_enqueue_script('comment-reply'); ?>
 
